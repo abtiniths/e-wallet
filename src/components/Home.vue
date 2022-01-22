@@ -11,41 +11,34 @@ export default {
     data() { return {
      cards : [
          {
-          vendor, 
-          cardNumber, 
-          cardholder, 
-          expireMonth, 
-          expireYear, 
-          CCV
+          vendor: "bitcoin", 
+          cardNumber: "53123213214", 
+          cardholder: "stuff stuffesson", 
+          expireMonth: "01/01", 
+          expireYear: "01/01", 
+          CCV:"223"
         },
-          {
-          vendor, 
-          cardNumber, 
-          cardholder, 
-          expireMonth, 
-          expireYear, 
-          CCV
+         {
+          vendor: "blockchain", 
+          cardNumber: "53123213214", 
+          cardholder: "stuff stuffesson", 
+          expireMonth: "01/01", 
+          expireYear: "01/01", 
+          CCV:"223"
         },
-          {
-          vendor, 
-          cardNumber, 
-          cardholder, 
-          expireMonth, 
-          expireYear, 
-          CCV
+         {
+          vendor: "evil", 
+          cardNumber: "53123213214", 
+          cardholder: "stuff stuffesson", 
+          expireMonth: "01/01", 
+          expireYear: "01/01", 
+          CCV:"223"
         },
-          {
-          vendor, 
-          cardNumber, 
-          cardholder, 
-          expireMonth, 
-          expireYear, 
-          CCV
-        }
+   
      ]
     }
         
-    }
+    },
 
 components: {Header}
 }
