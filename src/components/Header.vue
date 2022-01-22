@@ -1,12 +1,12 @@
 <template>
-  <div id="card-form">
-      
-  </div>
+  <h1> {{ titel }} </h1>
 </template>
 
 <script>
 export default {
-
+props: {
+    titel: String
+}
 }
 </script>
 
