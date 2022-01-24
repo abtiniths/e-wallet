@@ -1,7 +1,7 @@
 <template>
 <div id="home">
   <Header  title="Homeorwhatever"  />
-  <p>{{ cards }}s</p>
+  
   </div>
 </template>
 
