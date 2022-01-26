@@ -1,6 +1,6 @@
 <template>
-  <div id="card-form">
-      <div class="new-card">
+  <article class="add-card">
+      
        <label>Card Number</label>
        <input 
        type="number"
@@ -9,28 +9,33 @@
        v-model="card.cardNumber"
        minlength="16"
        maxlength="16"
+       @keyup="createCard"
        >
-     </div>
+    
         <div class="card-name">
        <label>Cardholder name</label>
        <input 
        type="text"
        class="card-name-input"
        v-model="card.cardHolder"
+       @keyup="createCard"
        placeholder="FIRSTNAME LASTNAME"
        >
      </div>
-        <div class="card-valid">
+        <div class="card-year">
        <label>Valid thru</label>
        <input 
        type="number"
-       class="card-valid"
+       class="card-year"
+       @change="createCard"
        placeholder="MM/YY"
-       v-model="card.valid"
+       v-model="card.expireYear"
        minlength="5"
        maxlength="5"
        >
-     </div>
+       </div>
+      
+
         <div class="card-ccv">
        <label>CCV Number</label>
        <input 
@@ -44,34 +49,37 @@
      </div>
      <div class="card-vendor">
        <label>Card Vendor</label>
-       <select class="cardVendor">
-         <option value="Bitcoin Inc">Bitcoin</option>
-         <option value="Evil Corp">Evil</option>
-         <option value="Ninja Bank">Ninja</option>
-         <option value="Block Chain Inc">Blockchain</option>
+       <select   name="vendor" @change="createCard" v-model="card.vendor">
+         <option value="bitcoin">Bitcoin</option>
+         <option value="evil">Evil</option>
+         <option value="ninja">Ninja</option>
+         <option value="blockchain">Blockchain</option>
        </select>
      </div>
       
+      </article>
       
       
 
       
-  </div>
+ 
  
 </template>
 
 <script>
 export default {
+  name: 'CardForm',
+  props: {
+    cardInfo: Object
+  },
 data() {
   return {
     card : {
-      vendor: 'Bitcoin',
-      cardHolder: '',
+      vendor: 'Blank',
+      cardHolder: 'Full Name',
       cardNumber: '',
-      valid: {
-        year: 'YY',
-        month: 'MM'
-      }
+      expireYear: 'YY/MM',
+    
     }
   }
 },
@@ -81,7 +89,8 @@ methods: {
       vendor: this.card.vendor,
       cardHolder: this.card.cardHolder,
       cardNumber: this.card.cardNumber,
-      valid: this.card.valid
+      expireYear: this.card.expireYear,
+    
     }
     this.$emit('createCard', card)
   }
@@ -89,6 +98,11 @@ methods: {
 }
 </script>
 
-<style>
+<style scoped>
+.add-card{
+  display: flex;
+  flex-direction: column;
+  margin:150px 0 150px 0
+}
 
 </style>

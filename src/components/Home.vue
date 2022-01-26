@@ -1,47 +1,39 @@
 <template>
 <div id="home">
-  <Header  title="Homeorwhatever"  />
+  <Header  title="Homeorwhatever" :cardMode="cardMode"/>
+  <Card :cardInfo="currentCard" />
+  <CardStack :cards="cards"  v-on:setcurrentcard(card)="setCurrentCard" />
+  <button class="btn-home" @click="toggleScreens">Add new card</button>
   
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue"
+import Card from "./Card.vue"
+import CardStack from "./CardStack.vue"
 export default {
-    
-    data() { return {
-     cards : [
-         {
-          vendor: "bitcoin", 
-          cardNumber: "53123213214", 
-          cardholder: "stuff stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
-          CCV:"223"
-        },
-         {
-          vendor: "blockchain", 
-          cardNumber: "53123213214", 
-          cardholder: "stuff stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
-          CCV:"223"
-        },
-         {
-          vendor: "evil", 
-          cardNumber: "53123213214", 
-          cardholder: "stuff stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
-          CCV:"223"
-        },
-   
-     ]
+name: 'Home',
+components: {Header, Card, CardStack},
+props: {
+  cards: [],
+  currentCard: {}
+},
+  data() { return {
+     cardMode: 'active',
     }
         
     },
+    methods: {
+      toggleScreens() {
+        this.$emit('toggleScreens')
+      },
+      setCurrentCard(card){
+        this.$emit('setcurrentcard', card)
+      }
+    },
 
-components: {Header}
+
 }
 </script>
 
