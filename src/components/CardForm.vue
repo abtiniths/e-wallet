@@ -76,7 +76,7 @@ data() {
   return {
     card : {
       vendor: 'Blank',
-      cardHolder: 'Full Name',
+      cardHolder: '',
       cardNumber: '',
       expireYear: 'YY/MM',
     
@@ -102,7 +102,7 @@ methods: {
 .add-card{
   display: flex;
   flex-direction: column;
-  margin:150px 0 150px 0
+  margin:150px 25px 150px 25px
 }
 
 </style>

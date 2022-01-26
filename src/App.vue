@@ -4,7 +4,7 @@
       :cards="cards"
       :currentCard="currentCard"
       v-on:toggleScreens="page.Home = !page.Home"
-      v-on:setcurrentcard="setCurrentCard"
+      v-on:setCurrentCard="setCurrentCard"
  />
 <AddCard  v-if="!page.Home"
           v-on:toggleScreens="page.Home = !page.Home"
@@ -66,9 +66,8 @@ data() {
   }},
 
 methods: {
-  addCard (card) {
+  addCard(card) {
     this.cards.push(card)
-    console.log(this.addCard)
   },
   setCurrentCard (card) {
     this.currentCard = card

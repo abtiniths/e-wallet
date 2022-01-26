@@ -2,7 +2,7 @@
 <div id="home">
   <Header  title="Homeorwhatever" :cardMode="cardMode"/>
   <Card :cardInfo="currentCard" />
-  <CardStack :cards="cards"  v-on:setcurrentcard(card)="setCurrentCard" />
+  <CardStack :cards="cards"  v-on:setCurrentCard="setCurrentCard" />
   <button class="btn-home" @click="toggleScreens">Add new card</button>
   
   </div>

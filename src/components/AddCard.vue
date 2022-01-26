@@ -29,9 +29,9 @@ export default {
     card : {
       vendor: 'blank',
       cardHolder: '',
-      cardNumber: 'xxxx xxxx xxxx xxxx',
-      expireMonth: "01/01", 
-      expireYear: "01/01",
+      cardNumber: '',
+      expireMonth: "", 
+      expireYear: "",
       }
     }},
 
@@ -41,12 +41,12 @@ export default {
     },
     
     addCard() {
-      this.$emit('addcard', this.card)
+      this.$emit('addCard', this.card)
       this.card = {
          vendor: 'Blank',
          cardHolder: '', 
          cardNumber: '',
-         expireYear: 'YY'},
+         expireYear: 'MM/YY'},
       this.$emit('toggleScreens')
     }
 
