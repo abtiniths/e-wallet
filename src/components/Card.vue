@@ -1,22 +1,23 @@
 <template>
   <div>
-    <article class="card" :class="vendorSelect" v-on:click="setCurrentCard">
+    <article class="card" :class="vendorSelect" @click="setCurrentCard">
        <header>
        
         <img v-if="cardInfo.vendor == 'blank'" src="@/assets/chip.svg" alt="chip">
         <img v-if="cardInfo.vendor === 'bitcoin'" src="@/assets/chip.svg" alt="chip">
+
         <img v-if="cardInfo.vendor !== 'bitcoin'" src="@/assets/wifi_white.svg" alt="wifi">
         <img v-if="cardInfo.vendor == 'bitcoin'" src="@/assets/wifi_white.svg" alt="wifi">
-        <img v-if="cardInfo.vendor == 'bitcoin'" src="@/assets/bitcoin.svg" alt="chip">
+       
 
         <img v-if="cardInfo.vendor == 'evil'" src="@/assets/evil.svg" alt="Evil Corp">
         <img v-if="cardInfo.vendor == 'evil'" src="@/assets/chip.svg" alt="chip">
         
-        <img v-if="cardInfo.vendor == 'ninja'" src="@/assets/blockchain.svg" alt="Blockchain Inc">
-        <img v-if="cardInfo.vendor == 'ninja'" src="@/assets/chip.svg" alt="chip">
-
+        <img v-if="cardInfo.vendor == 'blockchain'" src="@/assets/blockchain.svg" alt="Blockchain Inc">
         <img v-if="cardInfo.vendor == 'blockchain'" src="@/assets/chip.svg" alt="chip">
-        <img v-if="cardInfo.vendor == 'blockchain'" src="@/assets/ninja.svg" alt="Ninja Bank">
+
+        <img v-if="cardInfo.vendor == 'ninja'" src="@/assets/chip.svg" alt="chip">
+        <img v-if="cardInfo.vendor == 'ninja'" src="@/assets/ninja.svg" alt="Ninja Bank">
 
        
         
@@ -35,7 +36,8 @@ export default {
   name: 'Card',
   props: {
     cardInfo: Object
-  },
+  }
+  ,
   data() {
     return {
 
@@ -44,10 +46,14 @@ export default {
   methods: {
     setCurrentCard () {
       if (this.cardInfo.vendor == 'blank'){
-        this.$emit('setCurrentCard', this.cardInfo)
-      }
-    }
-  },
+        this.$emit('setcurrentcard', this.cardInfo)
+      }else if (this.cardInfo.vendor == 'evil'){
+        this.$emit('setcurrentcard', this.cardInfo)
+      }else if (this.cardInfo.vendor == 'bitcoin'){
+        this.$emit('setcurrentcard', this.cardInfo)
+    }else if (this.cardInfo.vendor == 'blockchain'){
+        this.$emit('setcurrentcard', this.cardInfo)
+  }}},
   computed: {
     vendorSelect() {
       if (this.cardInfo.vendor === 'bitcoin'){

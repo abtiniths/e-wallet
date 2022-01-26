@@ -3,6 +3,7 @@
  <Card v-for="(card, index) in cards" 
  :key="index"
  :cardInfo="card" 
+ v-on:setcurrentcard="$emit('setcurrentcard', card)"
  />
       
   </div>

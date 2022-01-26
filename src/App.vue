@@ -1,10 +1,10 @@
 <template>
   <main id="app">
 <Home  v-if="page.Home"
-      :cards="cards"
-      :currentCard="currentCard"
+      v-bind:cards="cards"
+      v-bind:currentCard="currentCard"
       v-on:toggleScreens="page.Home = !page.Home"
-      v-on:setCurrentCard="setCurrentCard"
+      v-on:setcurrentcard="setCurrentCard"
  />
 <AddCard  v-if="!page.Home"
           v-on:toggleScreens="page.Home = !page.Home"
@@ -56,7 +56,7 @@ data() {
      ],
      currentCard: {
          
-          vendor: 'Blank', 
+          vendor: 'ninja', 
           cardNumber: "53123213214", 
           cardHolder: "stuff stuffesson", 
           expireMonth: "01/01", 
@@ -69,7 +69,7 @@ methods: {
   addCard(card) {
     this.cards.push(card)
   },
-  setCurrentCard (card) {
+  setCurrentCard(card) {
     this.currentCard = card
   }
 }
