@@ -20,12 +20,14 @@ props: {
 }
 </script>
 
-<style>
+<style scoped>
  #card-stack {
     
      display: grid;
      grid-auto-rows: 5rem;
-     margin: 120px
-     
+ 
+  
  }
+ 
+
 </style>

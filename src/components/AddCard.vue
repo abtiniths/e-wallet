@@ -62,8 +62,22 @@ export default {
 
 
 
-
-
 <style>
+
+.btn-add-card{
+position: absolute;
+width: 382px;
+height: 80px;
+left: 770px;
+top: 799px;
+border: 1px solid #000000;
+box-sizing: border-box;
+border-radius: 8px;
+font-family: PT Mono;
+font-style: normal;
+font-weight: bold;
+font-size: 22px;
+line-height: 25px;
+}
 
 </style>

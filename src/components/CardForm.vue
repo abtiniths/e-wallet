@@ -98,11 +98,46 @@ methods: {
 }
 </script>
 
-<style scoped>
-.add-card{
+<style lang="scss" scoped>
+
+
+
+
+
+.card-number-input {
+width: 382px;
+height: 56px;
+left: 16px;
+top: 440px;
+font-size: 10px;
+border: 1px solid rgba(0, 0, 0, 0.8);
+box-sizing: border-box;
+border-radius: 8px;
+
+}
+
+
+select {
+ 
+  width: 382px;
+  height: 42px;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1px;
+  outline: none;
+}
+input::placeholder {
+  font-size: 15px;
+  font-family: "PT Mono";
+  text-align: center;
+}
+.add-card {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  margin:150px 25px 150px 25px
+  height: 200px;
+   padding: 1rem;
+   width: 382px;
 }
 
 </style>

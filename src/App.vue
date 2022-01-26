@@ -27,7 +27,8 @@ components: {
 data() {
   return {
     page: {Home:true},
-    cards : [
+    cards :
+     [
          {
           vendor: "bitcoin", 
           cardNumber: "53123213214", 
@@ -62,12 +63,14 @@ data() {
           expireMonth: "01/01", 
           expireYear: "01/01", 
           CCV:"223"
-        }
+        },
+        
   }},
 
 methods: {
   addCard(card) {
     this.cards.push(card)
+    
   },
   setCurrentCard(card) {
     this.currentCard = card
@@ -93,9 +96,5 @@ methods: {
   color: #2c3e50;
   margin-top: 1rem;
 }
-.ol{
-  display: flex;
-  flex-direction: column;
-  margin: 100 px
-}
+
 </style>
