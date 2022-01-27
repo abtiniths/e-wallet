@@ -27,7 +27,7 @@
    
 
          <p class="numbers">{{ cardInfo.cardNumber }}</p>
-      <section class="footer">
+      <section class="card-input">
         <div class="name">
           <p class="cardInfo">Carholder name</p>
           <p class="cardHolder">{{cardInfo.cardHolder}}</p>
@@ -88,7 +88,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+
 
 .evil {
     background: linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%), #F33355;
@@ -122,9 +124,7 @@ export default {
 
 
 .card {
-
-
- width: 382px;
+    width: 382px;
     height: 241px;
     position: relative;
     border-radius: 10px;

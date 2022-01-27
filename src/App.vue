@@ -88,6 +88,7 @@ methods: {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
 #app {
   display: flex;
   flex-direction: column;

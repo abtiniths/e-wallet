@@ -38,9 +38,7 @@ props: {
 </script>
 
 <style>
-#home{
-    align-items: center;
-}
+
 .btn-home{
 position: absolute;
 width: 382px;

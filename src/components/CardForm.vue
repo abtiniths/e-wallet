@@ -26,17 +26,13 @@
        <label>Valid thru</label>
        <input 
        type="number"
-       class="card-year"
+       class="card-year-input"
        @change="createCard"
        placeholder="MM/YY"
        v-model="card.expireYear"
        minlength="5"
        maxlength="5"
        >
-       </div>
-      
-
-        <div class="card-ccv">
        <label>CCV Number</label>
        <input 
        type="number"
@@ -74,6 +70,7 @@ export default {
   },
 data() {
   return {
+    
     card : {
       vendor: 'Blank',
       cardHolder: '',
@@ -93,7 +90,7 @@ methods: {
     
     }
     this.$emit('createCard', card)
-  }
+  },
 }
 }
 </script>
@@ -101,24 +98,73 @@ methods: {
 <style lang="scss" scoped>
 
 
-
-
-
-.card-number-input {
-width: 382px;
-height: 56px;
-left: 16px;
-top: 440px;
-font-size: 10px;
-border: 1px solid rgba(0, 0, 0, 0.8);
-box-sizing: border-box;
-border-radius: 8px;
-
+input, label {
+    display:block;
 }
 
 
-select {
+label {
+  margin-bottom: -14px;
+  font-family: "PT Mono";
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+.card-name-input {
+  font-family: "PT Mono";
+  margin: 14px 0;
+  text-align: center;
+  width: 382px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1px;
+  outline: none;
+}
+
+ .card-number-input {
+  font-family: "PT Mono";
+  margin: 14px 0;
+  text-align: center;
+  width: 382px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1px;
  
+}
+.card-year-input{
+font-family: "PT Mono";
+  margin: 14px 0;
+  text-align: center;
+  width: 140px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1px;
+  
+  
+}
+.card-year{
+  display:inline-flex
+}
+.card-ccv{
+font-family: "PT Mono";
+  margin: 14px 0;
+  text-align: center;
+  width: 140px;
+  font-size: 15px;
+  height: 40px;
+  border-radius: 8px;
+  border-color: rgba(0, 0, 0, 0.8);
+  border-width: 1px;
+  outline: none;
+}
+
+select {
   width: 382px;
   height: 42px;
   border-radius: 8px;
@@ -131,13 +177,11 @@ input::placeholder {
   font-family: "PT Mono";
   text-align: center;
 }
-.add-card {
+.card_form {
   margin-top: 20px;
-  display: flex;
-  flex-direction: column;
   height: 200px;
-   padding: 1rem;
-   width: 382px;
+  padding: 1rem;
+  width: 382px;
 }
 
 </style>
