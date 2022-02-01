@@ -53,4 +53,14 @@ font-weight: bold;
 font-size: 22px;
 line-height: 25px;
 }
+.btn-home:hover{
+  color: white;
+  background-color: black
+}
+.btn-home:active {
+  background-color: #814529;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 </style>

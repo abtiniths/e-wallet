@@ -1,6 +1,6 @@
 <template>
   <article class="add-card">
-      
+       
        <label>Card Number</label>
        <input 
        type="number"
@@ -103,6 +103,7 @@ methods: {
       cardHolder: this.card.cardHolder,
       cardNumber: this.card.cardNumber,
       expireYear: this.card.expireYear,
+      expireMonth: this.card.expireMonth
     
     }
     this.$emit('createCard', card)

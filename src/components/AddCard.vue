@@ -78,7 +78,18 @@ font-style: normal;
 font-weight: bold;
 font-size: 22px;
 line-height: 25px;
+background-color: black;
+color: white;
   
+}
+.btn-add-card:hover{
+  color: black;
+  background-color: white
+}
+.btn-add-card:active {
+  background-color: #814529;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 
