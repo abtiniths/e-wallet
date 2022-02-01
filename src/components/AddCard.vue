@@ -78,6 +78,8 @@ font-style: normal;
 font-weight: bold;
 font-size: 22px;
 line-height: 25px;
+  
 }
+
 
 </style>

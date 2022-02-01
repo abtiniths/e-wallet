@@ -40,11 +40,10 @@ props: {
 <style>
 
 .btn-home{
-position: absolute;
+position: relative;
 width: 382px;
 height: 80px;
-left: 770px;
-top: 799px;
+top: 200px;
 border: 1px solid #000000;
 box-sizing: border-box;
 border-radius: 8px;

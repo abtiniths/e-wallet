@@ -1,40 +1,32 @@
 <template>
   <div>
+
     <article class="card" :class="vendorSelect" @click="setCurrentCard">
        <header>
-       
-        <img class="bitcoin-logo" v-if="cardInfo.vendor == 'bitcoin'" src="@/assets/bitcoin.svg" alt="bitcoin">
-
-        <img class="blank-chip" v-if="cardInfo.vendor == 'blank'" src="@/assets/chip.svg" alt="chip">
-        <img class="bitcoin-chip" v-if="cardInfo.vendor === 'bitcoin'" src="@/assets/chip.svg" alt="chip">
-
-        <img class="wifi" v-if="cardInfo.vendor !== 'bitcoin'" src="@/assets/wifi_white.svg" alt="wifi">
-        <img class="bitcoin-wifi" v-if="cardInfo.vendor == 'bitcoin'" src="@/assets/wifi_white.svg" alt="wifi">
-       
-
-        <img class="evil-logo" v-if="cardInfo.vendor == 'evil'" src="@/assets/evil.svg" alt="Evil Corp">
-        <img class="evil-chip" v-if="cardInfo.vendor == 'evil'" src="@/assets/chip.svg" alt="chip">
-        
-        <img class="blockchain-logo" v-if="cardInfo.vendor == 'blockchain'" src="@/assets/blockchain.svg" alt="Blockchain Inc">
-        <img class="blockchain-chip" v-if="cardInfo.vendor == 'blockchain'" src="@/assets/chip.svg" alt="chip">
-
-        <img class="ninja-chip"  v-if="cardInfo.vendor == 'ninja'" src="@/assets/chip.svg" alt="chip">
-        <img class="ninja-logo" v-if="cardInfo.vendor == 'ninja'" src="@/assets/ninja.svg" alt="Ninja Bank">
-
-       
-        
+         
+       <img 
+       class="vendor-class"
+       :src="vendorSrc"
+       v-if="cardInfo.vendor"
+        />
+        <div class="chip-wifi">
+        <img  src="@/assets/wifi_white.svg" alt="wifi">
+        <img  src="@/assets/chip.svg" alt="chip">
+        </div>
       </header>
    
 
          <p class="numbers">{{ cardInfo.cardNumber }}</p>
       <section class="card-input">
-        <div class="name">
-          <p class="cardInfo">Carholder name</p>
-          <p class="cardHolder">{{cardInfo.cardHolder}}</p>
-        </div>
-        <div class="valid">
-          <p class="cardInfo">valid thru</p>
-          <p class="optionValid">{{cardInfo.expireYear}}</p>
+        <div class="name-valid">
+          <section class="name">
+          <p>Carholder name</p>
+          <p class="card-holder">{{cardInfo.cardHolder}}</p>
+        </section>
+        <section class="valid">
+          <p>Valid Thru</p>
+          <p>{{cardInfo.expireYear}} / {{cardInfo.expireMonth}}</p>
+          </section>
         </div>
       </section>
       </article>
@@ -81,6 +73,9 @@ export default {
         return 'blank'
       }
 
+    },
+    vendorSrc(){
+      return require(`../assets/${this.cardInfo.vendor}.svg`)
     }
   },
   
@@ -126,11 +121,50 @@ export default {
 .card {
     width: 382px;
     height: 241px;
-    position: relative;
     border-radius: 10px;
     font-family: "PT Mono";
     margin: 10px;
 
 filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.12));
 }
+.numbers{
+   
+    display: flex;
+    font-size: 1.6rem;
+    letter-spacing: .05rem;
+    padding: .5rem 0 0 0;
+    margin-left: 110px;
+   
+}
+.card header {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+}
+.card header img {
+    opacity: .9;
+}
+.chip-wifi {
+    
+    margin-right: 240px;
+    opacity: 1;
+   
+}
+.name-valid{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  transform: translateY(-16px);
+  
+  
+  
+    
+    
+}
+.vendor-class{
+  display: flex;
+}
+
+
 </style>

@@ -1,6 +1,7 @@
 <template>
   <main id="app">
-<Home  v-if="page.Home"
+<Home  
+      v-if="page.Home"
       v-bind:cards="cards"
       v-bind:currentCard="currentCard"
       v-on:toggleScreens="page.Home = !page.Home"
@@ -31,26 +32,26 @@ data() {
      [
          {
           vendor: "bitcoin", 
-          cardNumber: "53123213214", 
-          cardHolder: "first stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
+          cardNumber: "12344567321§", 
+          cardHolder: "Hugo Namesson", 
+          expireMonth: "01", 
+          expireYear: "01", 
           CCV:"223"
         },
          {
           vendor: "blockchain", 
-          cardNumber: "53123213214", 
-          cardHolder: "sec stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
+          cardNumber: "234534563456", 
+          cardHolder: "Kate Namesson", 
+          expireMonth: "01", 
+          expireYear: "01", 
           CCV:"223"
         },
          {
           vendor: "evil", 
-          cardNumber: "53123213214", 
-          cardHolder: "third stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
+          cardNumber: "123412343456", 
+          cardHolder: "Jackooz Namesson", 
+          expireMonth: "01", 
+          expireYear: "01", 
           CCV:"223"
         },
    
@@ -58,10 +59,10 @@ data() {
      currentCard: {
          
           vendor: 'ninja', 
-          cardNumber: "53123213214", 
+          cardNumber: "543223455432", 
           cardHolder: "stuff stuffesson", 
-          expireMonth: "01/01", 
-          expireYear: "01/01", 
+          expireMonth: "01", 
+          expireYear: "01", 
           CCV:"223"
         },
         
