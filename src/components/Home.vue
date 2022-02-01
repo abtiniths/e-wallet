@@ -1,6 +1,6 @@
 <template>
 <div id="home">
-  <Header  title="Homeorwhatever" :cardMode="cardMode"/>
+  <Header  title="E-WALLET" :cardMode="cardMode"/>
   <Card :cardInfo="currentCard" />
   <CardStack :cards="cards"  v-on:setcurrentcard="setCurrentCard" />
   <button class="btn-home" @click="toggleScreens">Add new card</button>
@@ -20,7 +20,7 @@ props: {
   currentCard: {}
 },
   data() { return {
-     cardMode: 'active',
+     cardMode: 'ACTIVE CARD',
     }
         
     },

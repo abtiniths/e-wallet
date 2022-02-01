@@ -1,7 +1,7 @@
 <template>
   <div id="add-card">
     <header>
-         <Header title=" addcard title"  :cardMode="cardMode" />
+         <Header title="ADD A NEW BANKCARD"  :cardMode="cardMode" />
          <Card :cardInfo="card" v-model="card" />
          <CardForm @createCard="createCard" v-model="card"/>
          <button class="btn-add-card" @click="addCard">Add</button>
@@ -17,13 +17,10 @@ import Card from "./Card.vue"
 import CardForm from "./CardForm.vue"
 export default {
   name: 'AddCard',
-  props:{
-    cardInfo : Object
-  },
   
   data (){
     return {
-    cardMode: 'New',
+    cardMode: 'NEW CARD',
     
     
     card : {

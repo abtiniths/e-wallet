@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <article class="card" :class="vendorSelect" @click="setCurrentCard">
+    <article class="card" v-bind:class="vendorSelect" @click="setCurrentCard">
        <header>
          
        <img 
@@ -11,7 +11,7 @@
         />
         <div class="chip-wifi">
         <img  src="@/assets/wifi_white.svg" alt="wifi">
-        <img  src="@/assets/chip.svg" alt="chip">
+        <img class="chip" src="@/assets/chip.svg" alt="chip">
         </div>
       </header>
    
@@ -165,6 +165,10 @@ filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.12));
 .vendor-class{
   display: flex;
 }
-
+.chip{
+  color: gold;
+  background-color: rgb(184, 178, 144);
+  border-radius: 7px;
+}
 
 </style>
