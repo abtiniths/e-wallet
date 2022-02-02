@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <article class="card" v-bind:class="vendorSelect" @click="setCurrentCard">
+    <article class="card" v-bind:class="cardInfo.vendor" @click="setCurrentCard">
        <header>
          
        <img 
@@ -48,32 +48,11 @@ export default {
   },
   methods: {
     setCurrentCard () {
-      if (this.cardInfo.vendor == 'blank'){
         this.$emit('setcurrentcard', this.cardInfo)
-      }else if (this.cardInfo.vendor == 'evil'){
-        this.$emit('setcurrentcard', this.cardInfo)
-      }else if (this.cardInfo.vendor == 'bitcoin'){
-        this.$emit('setcurrentcard', this.cardInfo)
-    }else if (this.cardInfo.vendor == 'blockchain'){
-        this.$emit('setcurrentcard', this.cardInfo)
-        }else if (this.cardInfo.vendor == 'ninja'){
-        this.$emit('setcurrentcard', this.cardInfo)
-  }}},
+    }
+  },
   computed: {
-    vendorSelect() {
-      if (this.cardInfo.vendor === 'bitcoin'){
-        return 'bitcoin';
-      }else if (this.cardInfo.vendor === 'evil'){
-        return 'evil';
-      }else if (this.cardInfo.vendor === 'ninja'){
-        return 'ninja';
-      }else if(this.cardInfo.vendor === 'blockchain'){
-        return 'blockchain'
-      }else{
-        return 'blank'
-      }
-
-    },
+    
     vendorSrc(){
       return require(`../assets/${this.cardInfo.vendor}.svg`)
     }
